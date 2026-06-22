@@ -1,26 +1,37 @@
 # Cognizant DN 5.0 Deep Skilling Assignment
 
-## Track
-DotNet Full Stack Engineer (FSE)
+## Candidate Details
+- Name: Ayush Raj
+- Track: DotNet Full Stack Engineer (FSE)
 
-## Week 1
+## Repository Structure
+
+```text
+Week 1
+│
+├── DesignPatterns
+│   ├── SingletonPatternExample
+│   └── FactoryMethodPatternExample
+│
+└── DataStructuresAndAlgorithms
+    └── EcommerceSearchExample
+```
+
+## Completed Exercises
 
 ### Design Patterns
-- [x] Singleton Pattern
-- [ ] Factory Method Pattern
+- Exercise 1: Implementing the Singleton Pattern
+- Exercise 2: Implementing the Factory Method Pattern
 
 ### Data Structures and Algorithms
-- [ ] Exercise 2: E-commerce Platform Search Function
-- [ ] Exercise 7: Financial Forecasting
+- Exercise 2: E-commerce Platform Search Function
 
-### Advanced SQL
-- [ ] Ranking and Window Functions
-- [ ] Create a Stored Procedure
-- [ ] Return Data from a Stored Procedure
+## Technologies Used
+- C#
+- .NET
+- Git
+- GitHub
+- Visual Studio Code
 
-### NUnit and Moq
-- [ ] NUnit Hands-on
-- [ ] Moq Hands-on
-
-## Progress
-Completed: Singleton Pattern ✅
+## Status
+Week 1 - In Progress
