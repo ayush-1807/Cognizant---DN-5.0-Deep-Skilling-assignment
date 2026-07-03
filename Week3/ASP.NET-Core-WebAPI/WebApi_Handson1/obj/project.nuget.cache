@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fJ+Kx5w2oIY=",
+  "dgSpecHash": "rx80n/lWtlU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
+  "projectFilePath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ayush\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
     "C:\\Users\\ayush\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
@@ -12,9 +12,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
-      "projectPath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
+      "projectPath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
+      "filePath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
       "libraryId": "Microsoft.OpenApi",
       "targetGraphs": [
         "net10.0"

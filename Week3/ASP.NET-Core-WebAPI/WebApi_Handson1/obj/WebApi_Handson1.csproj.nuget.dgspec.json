@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj": {}
+    "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj": {
+    "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
+        "projectUniqueName": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
         "projectName": "WebApi_Handson1",
-        "projectPath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
+        "projectPath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\WebApi_Handson1.csproj",
         "packagesPath": "C:\\Users\\ayush\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\obj\\",
+        "outputPath": "C:\\Users\\ayush\\OneDrive\\Desktop\\Cognizant-DN5-Deepskilling\\Week3\\ASP.NET-Core-WebAPI\\WebApi_Handson1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ayush\\AppData\\Roaming\\NuGet\\NuGet.Config"
