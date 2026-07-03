@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApi_Handson1.Models;
+using WebApi_Handson1.Filters;
 
 namespace WebApi_Handson1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    // [CustomAuthFilter]
     public class EmployeeController : ControllerBase
     {
         private static List<Employee> GetEmployees()
@@ -24,10 +26,10 @@ namespace WebApi_Handson1.Controllers
                     },
                     Skills = new List<Skill>
                     {
-                        new Skill{ Id=1, Name="C#" },
-                        new Skill{ Id=2, Name=".NET"}
+                        new Skill { Id = 1, Name = "C#" },
+                        new Skill { Id = 2, Name = ".NET" }
                     },
-                    DateOfBirth = new DateTime(2003,1,1)
+                    DateOfBirth = new DateTime(2003, 1, 1)
                 },
                 new Employee
                 {
@@ -42,9 +44,9 @@ namespace WebApi_Handson1.Controllers
                     },
                     Skills = new List<Skill>
                     {
-                        new Skill{ Id=3, Name="SQL"}
+                        new Skill { Id = 3, Name = "SQL" }
                     },
-                    DateOfBirth = new DateTime(2002,5,15)
+                    DateOfBirth = new DateTime(2002, 5, 15)
                 }
             };
         }
@@ -52,7 +54,7 @@ namespace WebApi_Handson1.Controllers
         [HttpGet]
         public ActionResult<List<Employee>> Get()
         {
-            return Ok(GetEmployees());
+            throw new Exception("Test Exception");
         }
 
         [HttpGet("{id}")]

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApi_Handson1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55ccbbb94ca5e81a9eecbe051559e91f39b1f7c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e75f50e8802c8398d0af4c7903227c03d8ad306d")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApi_Handson1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApi_Handson1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
