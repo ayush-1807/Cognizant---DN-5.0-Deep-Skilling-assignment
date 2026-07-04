@@ -6,7 +6,8 @@ namespace WebApi_Handson1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    // [CustomAuthFilter]
+    //[CustomAuthFilter]
+    //[CustomExceptionFilter]
     public class EmployeeController : ControllerBase
     {
         private static List<Employee> GetEmployees()
@@ -69,15 +70,32 @@ namespace WebApi_Handson1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Employee employee)
+        public IActionResult Post([FromBody] Employee employee)
         {
             return Ok("Employee Added Successfully");
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Employee employee)
+        public ActionResult<Employee> Put(int id, [FromBody] Employee employee)
         {
-            return Ok("Employee Updated Successfully");
+            var employees = GetEmployees();
+
+            if (id <= 0)
+                return BadRequest("Invalid employee id");
+
+            var emp = employees.FirstOrDefault(e => e.Id == id);
+
+            if (emp == null)
+                return BadRequest("Invalid employee id");
+
+            emp.Name = employee.Name;
+            emp.Salary = employee.Salary;
+            emp.Permanent = employee.Permanent;
+            emp.Department = employee.Department;
+            emp.Skills = employee.Skills;
+            emp.DateOfBirth = employee.DateOfBirth;
+
+            return Ok(emp);
         }
     }
 }
