@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi_Handson1.Models;
 using WebApi_Handson1.Filters;
@@ -6,6 +7,7 @@ namespace WebApi_Handson1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     //[CustomAuthFilter]
     //[CustomExceptionFilter]
     public class EmployeeController : ControllerBase
@@ -55,7 +57,7 @@ namespace WebApi_Handson1.Controllers
         [HttpGet]
         public ActionResult<List<Employee>> Get()
         {
-            throw new Exception("Test Exception");
+            return Ok(GetEmployees());
         }
 
         [HttpGet("{id}")]
