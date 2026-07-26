@@ -1,9 +1,26 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnChanges,
+  OnDestroy,
+  SimpleChanges
+} from '@angular/core';
+
+import { CommonModule } from '@angular/common';
+import { Highlight } from '../../directives/highlight';
+import { CreditLabelPipe } from '../../pipes/credit-label-pipe';
 
 @Component({
   selector: 'app-course-card',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    Highlight,
+    CreditLabelPipe
+  ],
   templateUrl: './course-card.html',
   styleUrl: './course-card.css'
 })
@@ -18,7 +35,7 @@ export class CourseCard implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('Course changed:', changes);
+    console.log(changes);
   }
 
   ngOnDestroy() {
@@ -28,5 +45,4 @@ export class CourseCard implements OnInit, OnChanges, OnDestroy {
   enroll() {
     this.enrollRequested.emit(this.course.id);
   }
-
 }
