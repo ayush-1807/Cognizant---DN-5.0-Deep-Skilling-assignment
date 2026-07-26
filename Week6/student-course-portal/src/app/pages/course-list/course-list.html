@@ -1,7 +1,11 @@
 <h3>Course List</h3>
 
-<ul>
-  <li>Angular</li>
-  <li>React</li>
-  <li>Java</li>
-</ul>
+<app-course-card
+  *ngFor="let c of courses"
+  [course]="c"
+  (enrollRequested)="onEnroll($any($event))">
+</app-course-card>
+
+<p *ngIf="selectedCourseId">
+  Selected Course ID: {{ selectedCourseId }}
+</p>

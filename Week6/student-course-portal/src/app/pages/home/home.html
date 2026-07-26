@@ -1,2 +1,18 @@
-<h3>Home Page</h3>
-<p>Welcome to Student Course Portal</p>
+<h2>{{ portalName }}</h2>
+
+<button
+  [disabled]="!isPortalActive"
+  (click)="onEnrollClick()">
+  Enroll Now
+</button>
+
+<p>{{ message }}</p>
+
+<hr>
+
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  placeholder="Search Course">
+
+<p>Searching for: {{ searchTerm }}</p>
