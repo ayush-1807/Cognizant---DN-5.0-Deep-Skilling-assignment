@@ -1,15 +1,19 @@
 <div appHighlight="lightblue">
 
-<h3>{{course?.name}}</h3>
+  <h3>{{ course.name }}</h3>
 
-<p>Code: {{course?.code}}</p>
+  <p>Code: {{ course.code }}</p>
 
-<p>{{course?.credits | creditLabel}}</p>
+  <p>{{ course.credits | creditLabel }}</p>
 
-<button (click)="enrollRequested.emit(course.id)">
-Enroll
-</button>
+  <button *ngIf="!isEnrolled()" (click)="enroll()">
+    Enroll
+  </button>
 
-<hr>
+  <button *ngIf="isEnrolled()" (click)="unenroll()">
+    Unenroll
+  </button>
+
+  <hr>
 
 </div>

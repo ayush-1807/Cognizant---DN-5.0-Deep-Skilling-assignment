@@ -1,4 +1,11 @@
 <h3>Student Profile</h3>
 
-<p>Name: Ayush</p>
-<p>Course: Angular</p>
+<p><b>Name:</b> Ayush</p>
+
+<h4>Enrolled Courses</h4>
+
+<ul>
+  <li *ngFor="let course of enrolledCourses">
+    {{ course.name }} ({{ course.code }})
+  </li>
+</ul>

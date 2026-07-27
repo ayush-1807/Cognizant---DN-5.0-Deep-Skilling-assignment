@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { EnrollmentForm } from '../enrollment-form/enrollment-form';
+import { CourseList } from '../course-list/course-list';
+import { StudentProfile } from '../student-profile/student-profile';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     FormsModule,
-    EnrollmentForm
+    EnrollmentForm,
+    CourseList,
+    StudentProfile
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
