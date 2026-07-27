@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { CourseCard } from '../../components/course-card/course-card';
 import { CourseService } from '../../services/course';
 import { Course } from '../../models/course.model';
@@ -16,14 +18,21 @@ export class CourseList implements OnInit {
   courses: Course[] = [];
   selectedCourseId = 0;
 
-  constructor(private courseService: CourseService) {}
+  constructor(
+    private courseService: CourseService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.courses = this.courseService.getCourses();
   }
 
-  onEnroll(id: number) {
+  onEnroll(id: number): void {
+
     this.selectedCourseId = id;
-    console.log(id);
+
+    this.router.navigate(['/courses', id]);
+
   }
+
 }
