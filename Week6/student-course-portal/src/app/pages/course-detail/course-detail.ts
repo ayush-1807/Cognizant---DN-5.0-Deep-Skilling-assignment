@@ -25,7 +25,17 @@ export class CourseDetail implements OnInit {
 
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.course = this.courseService.getCourseById(id);
+    this.courseService.getCourseById(id).subscribe({
+
+      next: (course) => {
+        this.course = course;
+      },
+
+      error: (err) => {
+        console.log(err);
+      }
+
+    });
 
   }
 

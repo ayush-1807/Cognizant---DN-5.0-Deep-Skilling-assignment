@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError, retry, tap } from 'rxjs/operators';
+
 import { Course } from '../models/course.model';
 
 @Injectable({
@@ -6,23 +10,41 @@ import { Course } from '../models/course.model';
 })
 export class CourseService {
 
-  private courses: Course[] = [
-    { id: 1, name: 'Angular', code: 'ANG101', credits: 4, gradeStatus: 'passed' },
-    { id: 2, name: 'React', code: 'REA101', credits: 3, gradeStatus: 'pending' },
-    { id: 3, name: 'Java', code: 'JAVA101', credits: 4, gradeStatus: 'passed' },
-    { id: 4, name: 'Python', code: 'PY101', credits: 3, gradeStatus: 'pending' },
-    { id: 5, name: 'C#', code: 'CS101', credits: 4, gradeStatus: 'failed' }
-  ];
+  private apiUrl = 'http://localhost:3000/courses';
 
-  getCourses(): Course[] {
-    return this.courses;
+  constructor(private http: HttpClient) {}
+
+  getCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>(this.apiUrl).pipe(
+
+      map(courses => courses.filter(c => c.credits > 0)),
+
+      tap(courses => console.log('Courses Loaded:', courses.length)),
+
+      retry(2),
+
+      catchError(err => {
+        console.error(err);
+        return throwError(() => new Error('Failed to load courses'));
+      })
+
+    );
   }
 
-  getCourseById(id: number): Course | undefined {
-    return this.courses.find(c => c.id === id);
+  getCourseById(id: number): Observable<Course> {
+    return this.http.get<Course>(`${this.apiUrl}/${id}`);
   }
 
-  addCourse(course: Course): void {
-    this.courses.push(course);
+  addCourse(course: Course): Observable<Course> {
+    return this.http.post<Course>(this.apiUrl, course);
   }
+
+  updateCourse(id: number, course: Course): Observable<Course> {
+    return this.http.put<Course>(`${this.apiUrl}/${id}`, course);
+  }
+
+  deleteCourse(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
 }
