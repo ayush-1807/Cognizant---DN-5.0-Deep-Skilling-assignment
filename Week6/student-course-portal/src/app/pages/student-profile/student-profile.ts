@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { EnrollmentService } from '../../services/enrollment';
 import { CourseService } from '../../services/course';
 import { Course } from '../../models/course.model';
@@ -25,11 +26,25 @@ export class StudentProfile implements OnInit {
   }
 
   loadCourses(): void {
-    this.enrolledCourses =
-      this.enrollmentService
-        .getEnrolledCourses()
-        .map(id => this.courseService.getCourseById(id))
-        .filter((course): course is Course => course !== undefined);
+
+    const ids = this.enrollmentService.getEnrolledCourses();
+
+    ids.forEach(id => {
+
+      this.courseService.getCourseById(id).subscribe({
+
+        next: (course) => {
+          this.enrolledCourses.push(course);
+        },
+
+        error: (err) => {
+          console.log(err);
+        }
+
+      });
+
+    });
+
   }
 
 }

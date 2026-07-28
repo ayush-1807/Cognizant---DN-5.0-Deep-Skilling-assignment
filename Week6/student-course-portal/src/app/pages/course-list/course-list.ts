@@ -1,10 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import { CourseCard } from '../../components/course-card/course-card';
-import { CourseService } from '../../services/course';
 import { Course } from '../../models/course.model';
+
+import * as CourseActions from '../../store/course/course.actions';
+import * as CourseSelectors from '../../store/course/course.selectors';
 
 @Component({
   selector: 'app-course-list',
@@ -15,33 +19,26 @@ import { Course } from '../../models/course.model';
 })
 export class CourseList implements OnInit {
 
-  courses: Course[] = [];
-  selectedCourseId = 0;
+  courses$!: Observable<Course[]>;
 
   constructor(
-    private courseService: CourseService,
+    private store: Store,
     private router: Router
   ) {}
 
   ngOnInit(): void {
 
-    this.courseService.getCourses().subscribe({
+    this.courses$ = this.store.select(
+      CourseSelectors.selectAllCourses
+    );
 
-      next: (courses) => {
-        this.courses = courses;
-      },
-
-      error: (err) => {
-        console.log(err);
-      }
-
-    });
+    this.store.dispatch(
+      CourseActions.loadCourses()
+    );
 
   }
 
   onEnroll(id: number): void {
-
-    this.selectedCourseId = id;
 
     this.router.navigate(['/courses', id]);
 
