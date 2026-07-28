@@ -3,5 +3,5 @@
 <app-course-card
   *ngFor="let course of (courses$ | async)"
   [course]="course"
-  (enroll)="onEnroll($event)">
+  (enrollRequested)="onEnroll($event)">
 </app-course-card>
